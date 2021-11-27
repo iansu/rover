@@ -750,7 +750,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "abae1f425167dae5fdb4c953e6205565a9a1cc252c33b7414cedd02e424243f4"
 dependencies = [
  "ansi_colours",
- "crossterm",
+ "crossterm 0.21.0",
 ]
 
 [[package]]
@@ -862,7 +862,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "486d44227f71a1ef39554c0dc47e44b9f4139927c75043312690c3f476d1d788"
 dependencies = [
  "bitflags",
- "crossterm_winapi",
+ "crossterm_winapi 0.8.0",
+ "libc",
+ "mio",
+ "parking_lot",
+ "signal-hook",
+ "signal-hook-mio",
+ "winapi",
+]
+
+[[package]]
+name = "crossterm"
+version = "0.22.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c85525306c4291d1b73ce93c8acf9c339f9b213aef6c1d85c3830cbf1c16325c"
+dependencies = [
+ "bitflags",
+ "crossterm_winapi 0.9.0",
  "libc",
  "mio",
  "parking_lot",
@@ -876,6 +892,15 @@ name = "crossterm_winapi"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3a6966607622438301997d3dac0d2f6e9a90c68bb6bc1785ea98456ab93c0507"
+dependencies = [
+ "winapi",
+]
+
+[[package]]
+name = "crossterm_winapi"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2ae1b35a484aa10e07fe0638d02301c5ad24de82d310ccbd2f3693da5f09bf1c"
 dependencies = [
  "winapi",
 ]
@@ -2670,7 +2695,7 @@ dependencies = [
  "camino",
  "chrono",
  "console 0.15.0",
- "crossterm",
+ "crossterm 0.22.1",
  "git-url-parse",
  "git2",
  "harmonizer",
@@ -3249,7 +3274,7 @@ checksum = "f6981ef35a70dfb4e78037a4ac33ce5a64233c6566592698a9d1c3bdda64271f"
 dependencies = [
  "coolor",
  "crossbeam",
- "crossterm",
+ "crossterm 0.21.0",
  "minimad",
  "thiserror",
  "unicode-width",
@@ -3429,9 +3454,9 @@ dependencies = [
 
 [[package]]
 name = "toml_edit"
-version = "0.9.1"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b26d63d75583ce572323a963b850d2121cf47a03b1f6c5fc96d641d3b0412b3"
+checksum = "506eddc39809976da80f4cd83941cf9ee3bbcccbeb5aa16e9592662899b41054"
 dependencies = [
  "combine 4.6.2",
  "indexmap",
